@@ -1,0 +1,34 @@
+# Hello world!
+name: Hello world
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  print_hello_from_runner:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest 
+    name: print from bash
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - run: echo "hello from shell"
+    #   - uses: actions/checkout@v3
+    #   - name: Set up Python 3.8
+    #     uses: actions/setup-python@v3
+    #     with:
+    #       python-version: "3.8"
+    #   - name: Install dependencies
+    #     run: |
+    #       python -m pip install --upgrade pip
+    #       pip install flake8
+    #       if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    #   - name: Run flake8
+    #     run: |
+    #       # ignore errors
+    #       flake8 --ignore=E1,E23,W503,F403,F401,E402,E501 ejemplo/tests/unit/test_nombres.py ejemplo/tests/integration/test_integracion.py
+    #       # stop the build if there are Python syntax errors or undefined names
+    #       flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+    #       # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+    #       flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
