@@ -26,7 +26,11 @@ def test_nombre_parametrize(nombre, esperado):
 
 # Pruebas para el apellido paterno
 def obtener_datos_test_ap():
-    return [("LOPEZ", "Lopez"), ("GarCIA", "Garcia"), ("sancHEz", "Sanchez")]
+    return [
+        ("LOPEZ", "Lopezddddd"),
+        ("GarCIA", "Garcia"),
+        ("sancHEz", "Sanchez"),
+    ]
 
 
 @pytest.mark.parametrize("ap, esperado", obtener_datos_test_ap())
@@ -52,6 +56,8 @@ def obtener_datos_test_usuario():
     ]
 
 
-@pytest.mark.parametrize("nombre, ap, am, esperado", obtener_datos_test_usuario())
+@pytest.mark.parametrize(
+    "nombre, ap, am, esperado", obtener_datos_test_usuario()
+)
 def test_usuario_parametrize(nombre, ap, am, esperado):
     assert generar_usuario(nombre, ap, am) == esperado
