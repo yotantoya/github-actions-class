@@ -21,13 +21,13 @@ jobs:
           python-version: "3.8"
       - name: Install dependencies
         run: |
-        python -m pip install --upgrade pip
-        python -m pip install pytest
-        if [ -f ejemplo/requirements.txt ]; then pip install -r ejemplo/requirements.txt; fi
+          python -m pip install --upgrade pip
+          python -m pip install pytest
+          if [ -f ejemplo/requirements.txt ]; then pip install -r ejemplo/requirements.txt; fi
       - name: Test with pytest
         run: |
-        pytest ejemplo/tests/unit/test_nombres.py -v
-        pytest ejemplo/tests/integration/test_integracion.py -v
+          pytest ejemplo/tests/unit/test_nombres.py -v
+          pytest ejemplo/tests/integration/test_integracion.py -v
     #   - uses: actions/checkout@v3
     #   - name: Set up Python 3.8
     #     uses: actions/setup-python@v3
